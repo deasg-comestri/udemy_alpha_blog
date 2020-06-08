@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Test Ruby on Rails application created as part of [The Complete Ruby On Rails Developer Course](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/) on [Udemy](https://www.udemy.com/).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![IMAGE](https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg)
