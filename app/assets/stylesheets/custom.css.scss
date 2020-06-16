@@ -1,18 +1,68 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-.navbar {
-  background-color: #B8B69F !important;
+// a:link, a:visited {
+//   color: #664439;
+// }
+h1 {
+  text-align: center;
+}
+
+#page-content>h1 {
+  color: white;
+}
+
+.navbar, .btn-primary, #sticky-footer.bg-dark {
+  background-color: #664439 !important;
+  border-color: #7c5344;
 }
   
 .navbar-brand {
   font-size: 3rem;
+  color: white !important;
 }
 
-a:link, a:visited {
+.dropdown-item {
   color: #664439;
-
 }
 
-h1 {
-  color: #664439;
+.nav-link, .btn-primary {
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background-color: #7c5344 !important;
+  border-color: #664439;
+}
+
+.container {
+  margin-top: 25px;
+}
+
+.text-primary {
+  color: #664439 !important;
+}
+
+.jumbotron {
+  background-image: asset-url('books-bg.jpg');
+  background-attachment: fixed;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+}
+
+/* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: #f8ebe6;
+}
+
+#sticky-footer {
+  flex-shrink: none;
 }
