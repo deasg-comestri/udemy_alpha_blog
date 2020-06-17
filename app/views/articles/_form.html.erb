@@ -1,7 +1,9 @@
-<%= render 'form_errors' %>
+
 
 <div class="container">
 
+  <%= render 'shared/errors' %>
+  
   <%= form_with(model: @article, class: "shadow p-3 mb-5 bg-white rounded", local: true) do |f| %>
   
     <div class="form-group row">

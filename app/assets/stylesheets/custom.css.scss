@@ -3,13 +3,13 @@
 // a:link, a:visited {
 //   color: #664439;
 // }
-h1 {
+h1, h2 {
   text-align: center;
 }
 
-#page-content>h1 {
-  color: white;
-}
+// #page-content>h1 {
+//   color: white;
+// }
 
 .navbar, .btn-primary, #sticky-footer.bg-dark {
   background-color: #664439 !important;
@@ -55,6 +55,7 @@ h1 {
 html,
 body {
   height: 100%;
+  background-color: #f8ebe6;
 }
 
 #page-content {
