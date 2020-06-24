@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article]
     @article = Article.new(article_params)
+    @article.user = User.first #temp until user login/authentication has been implemented
     if @article.save
       # render plain: @article.inspect
       flash[:notice] = 'Article was created successfully'

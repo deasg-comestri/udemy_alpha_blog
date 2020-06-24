@@ -5,7 +5,5 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :email
       t.timestamps
     end
-
-    # add_column :articles, :user, :integer
   end
 end
