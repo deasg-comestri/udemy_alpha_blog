@@ -1,6 +1,6 @@
 <% if obj.errors.any? %>
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <h4>The following errors occurred and the article was not saved</h4>
+    <h4>The following errors occurred and the <%= obj.class.name.downcase %> was not saved</h4>
     <hr>
     <ul>
       <% obj.errors.full_messages.each do |msg| %>
