@@ -1,0 +1,7 @@
+<h1 class="mt-2"><%= @user.username %>'s profile</h1>
+
+<div class="mb-4">
+  <%= gravatar_for @user, size: 200 %>
+</div>
+
+<%= render 'articles/article_list', articles: @user.articles %>
