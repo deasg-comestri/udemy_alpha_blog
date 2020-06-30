@@ -1,12 +1,16 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
-  def new
-    @user = User.new
+  def index
+    @users = User.all
   end
 
   def show
     @articles = Article.all
+  end
+
+  def new
+    @user = User.new
   end
 
   def edit
