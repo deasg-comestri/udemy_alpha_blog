@@ -23,9 +23,10 @@
       <li class="nav-item">
       </li>
       <li class="nav-item dropdown">
-        <% if session[:user_id] %>
+        <% if logged_in? %>
           <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= gravatar_for(User.find(session[:user_id]), size: 25, display: 'inline') %>
+            <%= gravatar_for(current_user, size: 25, display: 'inline') %>
+            <%= current_user.username %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarUserMenu">
             <%= link_to 'Log Out', logout_path, class: "dropdown-item", method: :delete %>
