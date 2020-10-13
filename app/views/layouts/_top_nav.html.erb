@@ -10,21 +10,46 @@
         <%= link_to 'Bloggers', users_path, class: 'nav-link' %>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarArticlesMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Articles
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarArticlesMenu">
+          <% if logged_in? %>
+            <%= link_to 'Create new article', new_article_path, class: "dropdown-item" %>
+          <% end %>
           <%= link_to 'List articles', articles_path, class: "dropdown-item" %>
-          <%= link_to 'Create new article', new_article_path, class: "dropdown-item" %>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
       <li class="nav-item">
-        <%= link_to 'Sign Up', signup_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <li class="nav-item dropdown">
+        <% if logged_in? %>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= gravatar_for(current_user, size: 25, display: 'inline') %>
+            <%= current_user.username %><%= ' (Admin)' if current_user.admin? %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarUserMenu">
+            <%= link_to 'View Profile', user_path(current_user), class: "dropdown-item" %>
+            <%= link_to 'Edit Profile', edit_user_path(current_user), class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Log Out', logout_path, class: "dropdown-item", method: :delete %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Delete User', user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+          <li class="nav-item">
+            <%= link_to 'Log Out', logout_path, class: 'nav-link', method: :delete %>
+          </li>
+        <% else %>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            User
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarUserMenu">
+            <%= link_to 'Log In', login_path, class: "dropdown-item" %>
+            <%= link_to 'Sign Up', signup_path, class: "dropdown-item" %>
+          </div>
+        <% end %>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
