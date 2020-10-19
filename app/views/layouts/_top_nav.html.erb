@@ -23,10 +23,10 @@
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarArticlesMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarCategoriesMenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categories
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarArticlesMenu">
+        <div class="dropdown-menu" aria-labelledby="navbarCategoriesMenu">
           <%= link_to 'View categories', categories_path, class: "dropdown-item" %>
           <% if logged_in? && current_user.admin? %>
             <%= link_to 'Create new category', new_category_path, class: "dropdown-item" %>
